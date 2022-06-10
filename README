@@ -1,0 +1,62 @@
+CONNECTING/DISCONNECTING
+
+• "login" adds your API Key from the global_vars.json file. API Key will be written to the global_vars.json file and will stay there so that you don't have to log in every time.
+python3 venafi.py --connect
+
+
+• delete default application and CIT in vaas database and all user information in the global_vars.json file. Must be logged in for this to work:
+python3 venafi.py --admin_clear
+
+• "logout" clears the API Key from the global_vars.json file
+python3 venafi.py --disconnect
+
+• get help with venafi.py
+python3 venafi.py --help
+
+
+VIEW CERTIFICATES
+
+python3 venafi.py --certs
+
+python3 venafi.py --certs --help
+
+python3 venafi.py --certs --cn="acme.org"
+
+python3 venafi.py --certs --issuer="WIN"
+
+python3 venafi.py --certs --eku="3" --cols="[2,3,"issuerCN"]" --headers
+
+
+VIEW INSTALLATIONS
+
+python3 venafi.py --installs --cn="www.acme.org"
+
+python3 venafi.py --installs --help
+
+python3 venafi.py --installs --cn="www.acme.org" --cols="all"
+
+
+REQUEST CERTIFICATES
+
+python3 venafi.py -r -h
+
+python3 venafi.py --request --cn="www.mycert.org" --key-size="4096" --locality="Paris"
+
+python3 venafi.py -r --cn="www.mycert.org"
+
+python3 Venafi --request --details='{"cn":"alex.details.test","dns":"alex.details.sans.test","l":"San Diego","c":"US"}'
+
+• Most of the certificate parameters are supported with this command,
+so knock yourself out with the parameters listed in --help)
+
+
+VIEW LOGS
+
+python3 venafi.py --logs -h
+
+python3 venafi.py --logs
+
+python3 venafi.py --logs --user="alex"
+
+python3 venafi.py --logs --show="200" --cols="[2,3,"criticality"]" --headers
+

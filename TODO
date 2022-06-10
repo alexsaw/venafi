@@ -1,0 +1,19 @@
+What to do next:
+
+DIRECT ASKS FROM PS
+1. I want to be able to find all the installations related to an application
+2. I want to find all the installations on a specific machine (Apache, F5)
+
+USABILITY IMPROVEMENTS
+1. Default verbosity level "2" which offers random tips based on the commands being run
+2. login with username and password using vcert utility
+3. At login show a dashboard of status items
+4. Get status of applications, certs, installs
+5. Be able to add new dicovery targets
+6. Be able to launch a new discovery via scanafi or vsatellite
+7. Be able to launch a VSatellite
+
+TECH IMPROVEMENTS
+1. Host on Github as an opensource project
+2. Migrate to Go Lang
+3. Introduce cacheing and the ability to work with states and recent requests to chain

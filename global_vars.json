@@ -1,0 +1,13 @@
+{
+    "API_KEY": 0,
+    "OWNER_ID": 0,
+    "USER": 0,
+    "USERNAME": 0,
+    "PASSWORD": 0,
+    "SALT": 0,
+    "DEFAULT_APP": 0,
+    "DEFAULT_TEMPLATE_ALIAS": 0,
+    "DEFAULT_TEMPLATE_ID": 0,
+    "LOGGED_IN": 0,
+    "VERBOSITY": 1
+}
