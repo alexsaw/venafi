@@ -1,6 +1,6 @@
 # Python program to demonstrate
 # command line arguments
- 
+
 import getopt, sys
 import ven_account, ven_help, ven_request, ven_certs, create_and_manage_defaults, ven_logs, ven_installs
 import json
@@ -25,7 +25,7 @@ with open('global_vars.json', 'r') as f:
 			arguments, values = getopt.getopt(argumentList, options, long_options)
 
 			# check if help was called
-			for currentArgument, currentValue in arguments:		
+			for currentArgument, currentValue in arguments:
 				if currentArgument in ("-h", "--help"):
 					ven_help.show_help(arguments, values)
 					exit()
@@ -42,24 +42,24 @@ with open('global_vars.json', 'r') as f:
 			for currentArgument, currentValue in arguments:
 				if currentArgument in ("-k", "--api_key"):
 					ven_account.change_key(arguments, values)
-				
+
 				elif currentArgument in ("-r", "--r", "--request"):
 					if global_vars["LOGGED_IN"] == 1:
 						ven_request.parse_req(arguments, values)
 					else:
 						ven_help.not_logged_in()
-				
+
 				elif currentArgument in ("--connect"):
 					# ven_account.pretend_login_with_email_and_password()
 					ven_account.connect_with_hard_coded_api_key()
 
 
-					
-				
+
+
 				elif currentArgument in ("--disconnect"):
 					# ven_account.logout()
 					ven_account.logout_api_version()
-				
+
 				elif currentArgument in ("-n", "--renew"):
 					if global_vars["LOGGED_IN"] == 1:
 						ven_account.get_creds()
@@ -95,7 +95,7 @@ with open('global_vars.json', 'r') as f:
 						create_and_manage_defaults.adminClear()
 					else:
 						ven_help.not_logged_in()
-					
+
 
 
 		except getopt.error as err:
